@@ -120,7 +120,7 @@ else
 fi
 
 #下载定制脚本到目录
-if ! wget --no-check-certificate https://raw.githubusercontent.com/91yun/shadowsocks_install/master/ssr.sh -O ${ssrdir}ssr.sh; then
+if ! wget --no-check-certificate https://raw.githubusercontent.com/pppseason/ssr-/master/ssr.sh -O ${ssrdir}ssr.sh; then
 	echo "Failed to download ssr script file!"
 	exit 1
 fi
