@@ -70,7 +70,7 @@ else
 fi
 
 #安装chacha20的依赖库
-wget -N --no-check-certificate https://raw.githubusercontent.com/91yun/shadowsocks_install/master/libsodium-1.0.12.tar.gz
+wget -N --no-check-certificate https://raw.githubusercontent.com/pppseason/ssr-/master/libsodium-1.0.12.tar.gz
 tar zfvx libsodium-1.0.12.tar.gz
 cd libsodium-1.0.12
 ./configure
@@ -94,12 +94,12 @@ sed -i "s/127.0.0.1/$myip/g" ${ssrdir}userapiconfig.py
 
 #下载服务文件，添加到系统服务，并随机启动
 if [ "$OS" == 'CentOS' ]; then
-	if ! wget --no-check-certificate https://raw.githubusercontent.com/91yun/shadowsocks_install/master/ssr -O /etc/init.d/ssr; then
+	if ! wget --no-check-certificate https://raw.githubusercontent.com/pppseason/ssr-/master/ssr -O /etc/init.d/ssr; then
 		echo "Failed to download ssr chkconfig file!"
 		exit 1
 	fi
 else
-	if ! wget --no-check-certificate https://raw.githubusercontent.com/91yun/shadowsocks_install/master/ssr-debian -O /etc/init.d/ssr; then
+	if ! wget --no-check-certificate https://raw.githubusercontent.com/pppseason/ssr-/master/ssr-debian -O /etc/init.d/ssr; then
 		echo "Failed to download ssr chkconfig file!"
 		exit 1
 	fi
@@ -125,7 +125,7 @@ if ! wget --no-check-certificate https://raw.githubusercontent.com/pppseason/ssr
 	exit 1
 fi
 sed -i "s@ssrdir=.*@ssrdir=$ssrdir@g" ${ssrdir}ssr.sh
-
+https://raw.githubusercontent.com/pppseason/ssr-/master/ssr-debian
 
 #启动定制脚本开始添加用户
 ssr start
